@@ -1,0 +1,6 @@
+shift + control + alt + KP_Subtract
+	reboot
+alt + KP_Subtract
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+alt + KP_Add
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
