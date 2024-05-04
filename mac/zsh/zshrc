@@ -1,0 +1,25 @@
+PS1="izu %1~ λ "
+if [[ $(arch) == 'i386' ]]; then
+	PS1="izu %1~ (x86) λ "
+	export PATH="/usr/local/bin:$PATH"
+	export PATH="/usr/local/opt/binutils/bin:$PATH"
+	export LDFLAGS="-L/usr/local/opt/binutils/lib"
+  	export CPPFLAGS="-I/usr/local/opt/binutils/include"
+	eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+fi
+
+export PATH="$HOME/bin:$PATH"
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+export PATH="/usr/local/texlive/2024/bin/universal-darwin:$PATH"
+export PATH="/usr/local/vasm/bin:$PATH"
+export PATH=$HOMEBREW_PREFIX/opt/python3/bin:$PATH
+
+alias l="lima"
+alias cl="clear"
+alias ls="ls --color"
+alias 86="arch -x86_64 zsh"
+alias nocolor="sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g'"
+alias dos="dosbox-x -fs &> /dev/null &"
+
+clear
+fortune | cowsay
